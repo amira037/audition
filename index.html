@@ -14,6 +14,15 @@ body {
 .wrap { max-width: 720px; margin: 0 auto; }
 .page-title { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
 .page-sub { font-size: 13px; color: #999; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid #e0ddd6; }
+.tabs { display:flex; gap:8px; margin:-12px 0 22px; }
+.tab-btn {
+  border:1px solid #e0ddd6; background:#fff; color:#777;
+  border-radius:8px; padding:8px 12px; font-size:12px; font-weight:600;
+  font-family:inherit; cursor:pointer;
+}
+.tab-btn.active { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
+.profile-panel { display:none; }
+.profile-panel.active { display:block; }
 
 .card { background: #fff; border-radius: 18px; border: 1px solid #e6e3dc; margin-bottom: 24px; overflow: hidden; }
 .card-top { display: flex; gap: 18px; padding: 20px 20px 16px; align-items: flex-start; }
@@ -92,7 +101,13 @@ body {
 <body>
 <div class="wrap">
 <div class="page-title">2026 오디션 프로필</div>
-<div class="page-sub">배우 3인 · 사진 및 영상 링크 포함</div>
+<div class="page-sub">역할별 오디션 프로필 · 해리/도진 역 후보 3인 · 나나역 후보 3인</div>
+<div class="tabs" role="tablist" aria-label="오디션 프로필 탭">
+  <button class="tab-btn active" type="button" data-tab="nana" onclick="showTab('nana')">나나역</button>
+  <button class="tab-btn" type="button" data-tab="general" onclick="showTab('general')">해리/도진 역</button>
+</div>
+
+<div class="profile-panel" id="tab-general">
 
 <!-- ===== 박현서 ===== -->
 <div class="card">
@@ -285,7 +300,177 @@ body {
 </div>
 
 </div>
+
+<div class="profile-panel active" id="tab-nana">
+
+<!-- ===== 전가영 ===== -->
+<div class="card">
+  <div class="card-top">
+    <img class="photo" src="assets/nana/jeon-ga-young.jpg" alt="전가영">
+    <div>
+      <div class="actor-name">전가영</div>
+      <div class="actor-en">Jeon Ga Young</div>
+      <div class="badge-row">
+        <span class="badge b-pink">여 · 2000.07.07</span>
+        <span class="badge b-gray">172cm</span>
+        <span class="badge b-teal">뮤지컬</span>
+      </div>
+    </div>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-item"><span class="meta-label">학력</span><span class="meta-value">경성대학교 연극영화학부 뮤지컬전공</span></div>
+    <div class="meta-item"><span class="meta-label">이메일</span><span class="meta-value">imgoing007@gmail.com</span></div>
+  </div>
+  <div class="section">
+    <div class="sec-title">경력</div>
+    <div class="career-list">
+      <div class="career-item"><span class="cy">2025</span><span class="ct">뮤지컬</span>슈가 (2025-2026)</div>
+      <div class="career-item"><span class="cy">2023</span><span class="ct">뮤지컬</span>삼총사 (2023-2024)</div>
+      <div class="career-item"><span class="cy">2023</span><span class="ct">뮤지컬</span>할란카운티</div>
+      <div class="career-item"><span class="cy">2022</span><span class="ct">뮤지컬</span>드라큘라 (2022-2023)</div>
+    </div>
+  </div>
+  <div class="gallery-wrap">
+    <div class="sec-title">사진</div>
+    <div class="gallery g4">
+      <img src="assets/nana/jeon-ga-young-1.jpg" alt="전가영">
+      <img src="assets/nana/jeon-ga-young-2.jpg" alt="전가영">
+      <img src="assets/nana/jeon-ga-young-3.jpg" alt="전가영">
+      <img src="assets/nana/jeon-ga-young-4.jpg" alt="전가영">
+      <img src="assets/nana/jeon-ga-young-5.jpg" alt="전가영">
+    </div>
+  </div>
+  <div class="video-section">
+    <div class="sec-title">영상</div>
+    <div class="video-grid">
+      <div class="pending-video"><span>🎬</span>영상 링크 추가 예정</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 배유주 ===== -->
+<div class="card">
+  <div class="card-top">
+    <img class="photo" src="assets/nana/bae-you-ju.jpg" alt="배유주">
+    <div>
+      <div class="actor-name">배유주</div>
+      <div class="actor-en">Bae You Ju</div>
+      <div class="badge-row">
+        <span class="badge b-pink">여 · 2001</span>
+        <span class="badge b-gray">166cm</span>
+        <span class="badge b-teal">한국무용</span>
+      </div>
+    </div>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-item"><span class="meta-label">학력</span><span class="meta-value">단국대학교 무용과 졸업</span></div>
+    <div class="meta-item"><span class="meta-label">특기</span><span class="meta-value">한국무용</span></div>
+    <div class="meta-item"><span class="meta-label">연락처</span><span class="meta-value">이성준 대표 010-3135-6675</span></div>
+    <div class="meta-item"><span class="meta-label">연락처</span><span class="meta-value">심하연 실장 010-5465-5104</span></div>
+  </div>
+  <div class="section">
+    <div class="sec-title">경력</div>
+    <div class="career-list">
+      <div class="career-item"><span class="cy">2026</span><span class="ct">드라마</span>숏드라마 킬더로미오 </div>
+      <div class="career-item"><span class="cy">2025</span><span class="ct">영화</span>한예종 워크숍 단편 걸신강림 · 청주영상위원회 제작지원</div>
+      <div class="career-item"><span class="cy">2025</span><span class="ct">공연</span>종묘 정전 환안제 · 고유제 / 무용</div>
+      <div class="career-item"><span class="cy">2025</span><span class="ct">뮤지컬</span>함께 날 수 있기를: 잇다</div>
+      <div class="career-item"><span class="cy">2025</span><span class="ct">광고</span>패스트파이브 유튜브광고</div>
+    </div>
+    <button class="toggle-btn" onclick="toggle('yuju')">▾ 전체 경력 보기</button>
+    <div class="career-list hidden" id="yuju-more">
+      <div class="career-item"><span class="cy">2025</span><span class="ct">MV</span>Vandi - Odyssey MV</div>
+      <div class="career-item"><span class="cy">수상</span><span class="ct">콩쿨</span>숙명여자대학교 콩쿨 금상</div>
+      <div class="career-item"><span class="cy">수상</span><span class="ct">콩쿨</span>한국체육대학교 콩쿨 은상</div>
+      <div class="career-item"><span class="cy">수상</span><span class="ct">콩쿨</span>동덕여자대학교 콩쿨 금상</div>
+    </div>
+  </div>
+  <div class="gallery-wrap">
+    <div class="sec-title">사진</div>
+    <div class="gallery g4">
+      <img src="assets/nana/bae-you-ju-1.jpg" alt="배유주">
+      <img src="assets/nana/bae-you-ju-2.jpg" alt="배유주">
+      <img src="assets/nana/bae-you-ju-3.jpg" alt="배유주">
+    </div>
+  </div>
+  <div class="video-section">
+    <div class="sec-title">영상</div>
+    <div class="video-grid">
+      <div class="pending-video"><span>🎬</span>영상 링크 추가 예정</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 김지유 ===== -->
+<div class="card">
+  <div class="card-top">
+    <img class="photo" src="assets/nana/kim-ji-yu.jpg" alt="김지유">
+    <div>
+      <div class="actor-name">김지유</div>
+      <div class="actor-en">Kim Ji Yu</div>
+      <div class="badge-row">
+        <span class="badge b-pink">여 · 2004.08.30</span>
+        <span class="badge b-gray">158cm / 44kg</span>
+      </div>
+    </div>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-item"><span class="meta-label">학력</span><span class="meta-value">경성대학교 연극영화학과 22학번 재학중</span></div>
+    <div class="meta-item"><span class="meta-label">거주지</span><span class="meta-value">부산시 해운대구</span></div>
+    <div class="meta-item"><span class="meta-label">연락처</span><span class="meta-value">010-5614-3576</span></div>
+    <div class="meta-item"><span class="meta-label">이메일</span><span class="meta-value">qwertypink4830@naver.com</span></div>
+    <div class="meta-item"><span class="meta-label">SNS</span><span class="meta-value">@im.jiyu4830</span></div>
+  </div>
+  <div class="section">
+    <div class="sec-title">경력</div>
+    <div class="career-list">
+      <div class="career-item"><span class="cy">-</span><span class="ct">워크샵</span>타오르는 어둠속에서 / 엘리사 역</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">워크샵</span>맘마미아 / 앙상블</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">워크샵</span>하이스쿨뮤지컬 / 앙상블</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">홍보영상</span>부산 웰니스 홍보영상</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">단편</span>지리는 연애 / 공수지 역</div>
+    </div>
+    <button class="toggle-btn" onclick="toggle('jiyu')">▾ 전체 경력 보기</button>
+    <div class="career-list hidden" id="jiyu-more">
+      <div class="career-item"><span class="cy">-</span><span class="ct">예능</span>동아대학교 예능 에브리타임</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">홍보영상</span>부산시 해운대구 워케이션 홍보영상</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">단편</span>아이러브유 / 임사라 역</div>
+      <div class="career-item"><span class="cy">-</span><span class="ct">진행</span>엠플렉스 소극장 진행</div>
+    </div>
+  </div>
+  <div class="gallery-wrap">
+    <div class="sec-title">사진</div>
+    <div class="gallery g4">
+      <img src="assets/nana/kim-ji-yu-1.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-2.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-3.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-4.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-5.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-6.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-7.jpg" alt="김지유">
+      <img src="assets/nana/kim-ji-yu-8.jpg" alt="김지유">
+    </div>
+  </div>
+  <div class="video-section">
+    <div class="sec-title">영상</div>
+    <div class="video-grid">
+      <div class="pending-video"><span>🎬</span>영상 링크 추가 예정</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
 <script>
+function showTab(id) {
+  document.querySelectorAll('.profile-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.id === 'tab-' + id);
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-tab') === id);
+  });
+}
 function toggle(id) {
   const el = document.getElementById(id + '-more');
   const btn = el.previousElementSibling;
